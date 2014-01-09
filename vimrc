@@ -262,7 +262,7 @@ command! Th call s:ChangeLang('th')
 " set default lang
 En
 
-command! FixTailingSpace %s/\s\+$
+command! FixTrailingSpaces %s/\s\+$
 
 " gui setting --------------------------------------------
 if has('gui_running')
