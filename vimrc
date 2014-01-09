@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'joonty/vdebug'
 
-Bundle 'tpope/fugitive'
+Bundle 'tpope/vim-fugitive'
 
 Bundle 'scrooloose/syntastic'
 
