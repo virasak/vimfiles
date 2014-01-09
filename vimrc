@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+" Setup Vundle
+" ----------------
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/vundle
   call vundle#rc('~/vimfiles/bundle')
@@ -121,7 +123,7 @@ Bundle 'bufkill.vim'
 
 Bundle 'tpope/vim-haml'
 
-" User perferences
+" User preferences
 " ----------------
 filetype plugin indent on
 syntax on
