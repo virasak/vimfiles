@@ -14,6 +14,9 @@ endif
 
 Bundle 'gmarik/vundle'
 
+Bundle 'jlanzarotta/bufexplorer'
+  let g:bufExplorerDefaultHelp=0
+
 Bundle 'joonty/vdebug'
 
 Bundle 'tpope/vim-fugitive'
