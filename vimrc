@@ -114,6 +114,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5-syntax.vim'
 
 Bundle 'Lokaltog/vim-easymotion'
+  let g:EasyMotion_leader_key = '<Leader>'
 
 Bundle 'krisajenkins/vim-pipe'
 
