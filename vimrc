@@ -115,6 +115,9 @@ Bundle 'othree/html5-syntax.vim'
 
 Bundle 'Lokaltog/vim-easymotion'
   let g:EasyMotion_leader_key = '<Leader>'
+  nnoremap <silent> f :call EasyMotion#F('F', 0)<CR>
+  nnoremap <silent> F :call EasyMotion#F('F', 1)<CR>
+
 
 Bundle 'krisajenkins/vim-pipe'
 
