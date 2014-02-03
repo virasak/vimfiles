@@ -132,6 +132,8 @@ Bundle 'bufkill.vim'
 
 Bundle 'tpope/vim-haml'
 
+Bundle 'mhinz/vim-signify'
+
 " User preferences
 " ----------------
 filetype plugin indent on
