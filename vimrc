@@ -227,7 +227,8 @@ function! s:ChangeScheme(scheme)
   if a:scheme == 'light'
     set background=light
     if has('gui_running')
-      silent! color habiLight
+      silent! color osx_like
+      "silent! color habiLight
       "silent! color rainbow_fruit
     endif
   elseif a:scheme == 'dark'
