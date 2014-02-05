@@ -216,17 +216,6 @@ if has('unix')
 endif
 " }}}
 
-" Diff current buffer with its saved file {{{
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe 'setlocal bt=nofile bh=wipe nobl noswf ro ft=' . filetype
-endfunction
-command! DiffSaved call s:DiffWithSaved()
-" }}}
-
 " change colorscheme by profile {{{
 function! s:ChangeScheme(scheme)
   if a:scheme == 'light'
@@ -305,6 +294,8 @@ let g:netrw_liststyle=3
 
 " misc. command {{{
 command! FixTrailingSpaces %s/\s\+$
+command! DiffSaved call diff#WithSaved()
+
 " }}}
 
 " vim:ts=2:sw=2:foldmethod=marker
