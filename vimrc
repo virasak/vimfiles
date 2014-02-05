@@ -197,17 +197,15 @@ nnoremap <silent> Y y$
 nnoremap <silent> H :tabprev<CR>
 nnoremap <silent> L :tabnext<CR>
 
-cnoremap <silent> <C-a>  <Home>
-cnoremap <silent> <C-b>  <Left>
-cnoremap <silent> <C-f>  <Right>
-cnoremap <silent> <C-d>  <Delete>
-cnoremap <silent> <M-b>  <S-Left>
-cnoremap <silent> <M-f>  <S-Right>
-cnoremap <silent> <M-d>  <S-right><Delete>
-cnoremap <silent> <Esc>b <S-Left>
-cnoremap <silent> <Esc>f <S-Right>
-cnoremap <silent> <Esc>d <S-right><Delete>
-cnoremap <silent> <C-g>  <C-c>
+" command mode key mapping {{{
+" <A-0>
+cnoremap <silent> ° <Home>
+" <A-$>
+cnoremap <silent> ´ <End>
+" <A-h>
+cnoremap <silent> è <Left>
+" <A-l>
+cnoremap <silent> ì <Right>
 
 if has('unix')
   cnoremap w!! %!sudo tee > /dev/null %
