@@ -8,8 +8,9 @@ else
   set rtp+=~/.vim/bundle/vundle
   call vundle#rc()
 endif
+" }}}
 
-
+" Load bundles {{{
 Bundle 'gmarik/vundle'
 
 Bundle 'jlanzarotta/bufexplorer'
@@ -162,7 +163,7 @@ set wildchar=<Tab> wildmenu wildmode=longest,list,full
 set virtualedit=block
 
 
-" turn of error sound
+" turn off error sound
 set noerrorbells
 set visualbell t_vb=
 "
@@ -293,7 +294,6 @@ let g:netrw_liststyle=3
 " misc. command {{{
 command! FixTrailingSpaces %s/\s\+$
 command! DiffSaved call diff#WithSaved()
-
 " }}}
 
 " vim:ts=2:sw=2:foldmethod=marker
