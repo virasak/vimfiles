@@ -93,6 +93,7 @@ Bundle 'junegunn/vim-easy-align'
   vnoremap <silent> <Enter> :EasyAlign<CR>
 
 Bundle 'bling/vim-airline'
+  set noshowmode
   au VimEnter *  :AirlineTheme lucius
   let g:airline_left_sep = '⮀'
   let g:airline_left_alt_sep = '⮁'
