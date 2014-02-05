@@ -1,8 +1,6 @@
+" Setup Vundle ---------------- {{{
 set nocompatible
 filetype off
-
-" Setup Vundle
-" ----------------
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/vundle
   call vundle#rc('~/vimfiles/bundle')
@@ -135,8 +133,9 @@ Bundle 'tpope/vim-haml'
 
 Bundle 'mhinz/vim-signify'
 
-" User preferences
-" ----------------
+" }}}
+
+" Set default options {{{
 filetype plugin indent on
 syntax on
 
@@ -162,19 +161,19 @@ set laststatus=2
 set wildchar=<Tab> wildmenu wildmode=longest,list,full
 set virtualedit=block
 
-" {{{ turn of error sound
+
+" turn of error sound
 set noerrorbells
 set visualbell t_vb=
-" }}}
+"
 
 set nobackup
 set noswapfile
 
-" {{{
+"
 set scrolloff=4
 set sidescrolloff=10
 set sidescroll=1
-" }}}
 "
 " preserve column position after some actions
 set nostartofline
@@ -185,10 +184,14 @@ set backspace=indent,eol,start
 set background=dark
 color desert
 
-" key mapping -----------------------------------------------
+" }}}
+
+" visual mode key mapping {{{
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
+" }}}
 
+" normal mode key mapping {{{
 nnoremap <silent> <NL> i<CR><Esc>
 nnoremap <silent> <Tab>   <C-w>w
 nnoremap <silent> <S-Tab> <C-w>W
@@ -211,8 +214,9 @@ cnoremap <silent> ì <Right>
 if has('unix')
   cnoremap w!! %!sudo tee > /dev/null %
 endif
+" }}}
 
-
+" Diff current buffer with its saved file {{{
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis
@@ -221,7 +225,9 @@ function! s:DiffWithSaved()
   exe 'setlocal bt=nofile bh=wipe nobl noswf ro ft=' . filetype
 endfunction
 command! DiffSaved call s:DiffWithSaved()
+" }}}
 
+" change colorscheme by profile {{{
 function! s:ChangeScheme(scheme)
   if a:scheme == 'light'
     set background=light
@@ -248,7 +254,9 @@ command! Dark call s:ChangeScheme('dark')
 command! Light call s:ChangeScheme('light')
 " set default scheme
 Dark
+" }}}
 
+" Change working language by profile {{{
 function! s:ChangeLang(lang)
     if a:lang == 'en'
       if has('win32') || has('win64')
@@ -272,10 +280,9 @@ command! Th call s:ChangeLang('th')
 
 " set default lang
 En
+" }}}
 
-command! FixTrailingSpaces %s/\s\+$
-
-" gui setting --------------------------------------------
+" change font size/linespace {{{
 if has('gui_running')
   set guioptions=i
 
@@ -288,9 +295,16 @@ if has('gui_running')
   nnoremap <silent> <C-Left>  :set linespace-=1<CR>
 
 endif
+" }}}
 
-" netrw plugin setting
+" netrw plugin setting {{{
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 
-" vim:ts=2:sw=2
+" }}}
+
+" misc. command {{{
+command! FixTrailingSpaces %s/\s\+$
+" }}}
+
+" vim:ts=2:sw=2:foldmethod=marker
