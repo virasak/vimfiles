@@ -200,16 +200,13 @@ nnoremap <silent> Y y$
 
 nnoremap <silent> H :tabprev<CR>
 nnoremap <silent> L :tabnext<CR>
+" }}}
 
 " command mode key mapping {{{
-" <A-0>
-cnoremap <silent> ° <Home>
-" <A-$>
-cnoremap <silent> ´ <End>
-" <A-h>
-cnoremap <silent> è <Left>
-" <A-l>
-cnoremap <silent> ì <Right>
+cnoremap <A-0> <Home>
+cnoremap <A-$> <End>
+cnoremap <A-h> <Left>
+cnoremap <A-l> <Right>
 
 if has('unix')
   cnoremap w!! %!sudo tee > /dev/null %
