@@ -184,6 +184,7 @@ set backspace=indent,eol,start
 set background=dark
 color desert
 
+set spelllang=en_us
 " }}}
 
 " visual mode key mapping {{{
