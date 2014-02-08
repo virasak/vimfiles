@@ -1,3 +1,5 @@
+let mapleader=" "
+
 " Setup Vundle ---------------- {{{
 set nocompatible
 filetype off
@@ -28,7 +30,7 @@ Bundle 'scrooloose/nerdtree'
   endif
   let NERDTreeDirArrows=1
   let NERDTreeWinSize=30
-  nnoremap <silent> <Space> :NERDTreeToggle<CR>
+  nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
 
 Bundle 'scrooloose/nerdcommenter'
 
@@ -134,8 +136,6 @@ Bundle 'mhinz/vim-signify'
 " Set default options {{{
 filetype plugin indent on
 syntax on
-
-let mapleader='M'
 
 set number numberwidth=5
 set showcmd
