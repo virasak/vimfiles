@@ -133,6 +133,11 @@ Bundle 'tpope/vim-haml'
 
 Bundle 'mhinz/vim-signify'
 
+Bundle 'cmdalias.vim'
+  au VimEnter *  :Alias th Th
+  au VimEnter *  :Alias en En
+  au VimEnter *  :Alias light Light
+  au VimEnter *  :Alias dark  Dark
 " }}}
 
 " Set default options {{{
