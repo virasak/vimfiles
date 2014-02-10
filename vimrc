@@ -115,9 +115,6 @@ Bundle 'derekwyatt/vim-scala'
 
 Bundle 'othree/html5-syntax.vim'
 
-"Bundle 'Lokaltog/vim-easymotion'
-  "let g:EasyMotion_leader_key = '<Leader>'
-
 Bundle 'justinmk/vim-sneak'
 
 Bundle 'krisajenkins/vim-pipe'
@@ -132,12 +129,14 @@ Bundle 'bufkill.vim'
 Bundle 'tpope/vim-haml'
 
 Bundle 'mhinz/vim-signify'
+  let g:signify_disable_by_default = 0
 
 Bundle 'cmdalias.vim'
   au VimEnter *  :Alias th Th
   au VimEnter *  :Alias en En
   au VimEnter *  :Alias light Light
   au VimEnter *  :Alias dark  Dark
+  au VimEnter *  :Alias git Git
 " }}}
 
 " Set default options {{{
