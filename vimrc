@@ -36,8 +36,6 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_cmd = 'CtrlPLastMode'
-  nnoremap <silent> >f :CtrlP<CR>
-  nnoremap <silent> >b :CtrlPBuffer<CR>
 
 Bundle 'Shougo/unite.vim'
 
