@@ -98,10 +98,7 @@ Bundle 'bling/vim-airline'
   let g:airline_left_alt_sep = '⮁'
   let g:airline_right_sep = '⮂'
   let g:airline_right_alt_sep = '⮃'
-  let g:airline_symbols = {}
-  let g:airline_symbols.branch = '⭠'
-  let g:airline_symbols.readonly = '⭤'
-  let g:airline_symbols.linenr = '⭡'
+  let g:airline_symbols = {'branch': '⭠', 'readonly': '⭤', 'linenr': '⭡'}
 
 Bundle 'jelera/vim-javascript-syntax'
 
@@ -114,7 +111,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/html5-syntax.vim'
 
 Bundle 'justinmk/vim-sneak'
-"replace 'f' with inclusive 1-char Sneak
+  "replace 'f' with inclusive 1-char Sneak
     nmap f <Plug>Sneak_f
     nmap F <Plug>Sneak_F
     xmap f <Plug>Sneak_f
