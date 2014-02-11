@@ -215,6 +215,8 @@ nnoremap <silent> L :tabnext<CR>
 " }}}
 
 " command mode key mapping {{{
+cnoremap <C-w> <Home>\<<End>\><CR>
+
 if has('unix')
   cnoremap w!! %!sudo tee > /dev/null %
 endif
