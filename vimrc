@@ -204,6 +204,7 @@ vnoremap <silent> > >gv
 " }}}
 
 " normal mode key mapping {{{
+nnoremap <silent> <Space> <Nop>
 nnoremap <silent> <NL> i<CR><Esc>
 nnoremap <silent> <Tab>   <C-w>w
 nnoremap <silent> <S-Tab> <C-w>W
