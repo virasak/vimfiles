@@ -16,8 +16,14 @@ endif
 Bundle 'gmarik/vundle'
 
 Bundle 'jlanzarotta/bufexplorer'
+  let g:bufExplorerDisableDefaultKeyMapping=1
   let g:bufExplorerDefaultHelp=0
-  nnoremap <silent> <S-Space> :BufExplorer<CR>
+  function! s:SwitchBuffers()
+      if &filetype != 'nerdtree'
+          BufExplorer
+      end
+  endfunction
+  nnoremap <silent> <S-Space> :call <SID>SwitchBuffers()<CR>
 
 Bundle 'joonty/vdebug'
 
