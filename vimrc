@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'jlanzarotta/bufexplorer'
   let g:bufExplorerDefaultHelp=0
+  nnoremap <silent> <S-Space> :BufExplorer<CR>
 
 Bundle 'joonty/vdebug'
 
