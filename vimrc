@@ -150,7 +150,7 @@ Bundle 'bufkill.vim'
 Bundle 'tpope/vim-haml'
 
 Bundle 'mhinz/vim-signify'
-  let g:signify_disable_by_default = 0
+  let g:signify_disable_by_default = 1
 
 Bundle 'cmdalias.vim'
   au VimEnter *  :Alias th Th
