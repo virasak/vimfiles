@@ -223,8 +223,24 @@ nnoremap <silent> <S-Tab> <C-w>W
 
 nnoremap <silent> Y y$
 
-nnoremap <silent> H :tabprev<CR>
-nnoremap <silent> L :tabnext<CR>
+function s:NextTabLine()
+  if tabpagenr('$') == 1
+    bnext
+  else
+    tabnext
+  endif
+endfunction
+
+function s:PrevTabLine()
+  if tabpagenr('$') == 1
+    bprev
+  else
+    tabprev
+  endif
+endfunction
+
+nnoremap <silent> H :call <SID>PrevTabLine()<CR>
+nnoremap <silent> L :call <SID>NextTabLine()<CR>
 
 " }}}
 
