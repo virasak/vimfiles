@@ -15,16 +15,6 @@ endif
 " Load bundles {{{
 Bundle 'gmarik/vundle'
 
-Bundle 'jlanzarotta/bufexplorer'
-  let g:bufExplorerDisableDefaultKeyMapping=1
-  let g:bufExplorerDefaultHelp=0
-  function! s:SwitchBuffers()
-      if &filetype != 'nerdtree'
-          BufExplorer
-      end
-  endfunction
-  nnoremap <silent> <S-Space> :call <SID>SwitchBuffers()<CR>
-
 Bundle 'joonty/vdebug'
 
 Bundle 'tpope/vim-fugitive'
@@ -47,8 +37,6 @@ Bundle 'kien/ctrlp.vim'
   nnoremap <silent> >b :CtrlPBuffer<CR>
   nnoremap <silent> >d :CtrlPDir<CR>
 
-Bundle 'Shougo/unite.vim'
-
 Bundle 'tpope/vim-surround'
 
 Bundle 'tpope/vim-repeat'
@@ -57,13 +45,7 @@ Bundle 'tpope/vim-unimpaired'
 
 Bundle 'flazz/vim-colorschemes'
 
-Bundle 'AfterColors.vim'
-
 Bundle 'xolox/vim-colorscheme-switcher'
-
-Bundle 'mattn/webapi-vim'
-
-Bundle 'mattn/gist-vim'
 
 Bundle 'matchit.zip'
 
