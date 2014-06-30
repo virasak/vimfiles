@@ -43,6 +43,9 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'kien/ctrlp.vim'
   let g:ctrlp_cmd = 'CtrlPLastMode'
+  nnoremap <silent> >f :CtrlP<CR>
+  nnoremap <silent> >b :CtrlPBuffer<CR>
+  nnoremap <silent> >d :CtrlPDir<CR>
 
 Bundle 'Shougo/unite.vim'
 
@@ -100,13 +103,6 @@ Bundle 'junegunn/vim-easy-align'
 
 Bundle 'bling/vim-airline'
   set noshowmode
-  au VimEnter *  :AirlineTheme lucius
-  " statusline
-  let g:airline_left_sep = '⮀'
-  let g:airline_left_alt_sep = '⮁'
-  let g:airline_right_sep = '⮂'
-  let g:airline_right_alt_sep = '⮃'
-  let g:airline_symbols = {'branch': '⭠', 'readonly': '⭤', 'linenr': '⭡'}
   " tabline
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#left_sep = ' '
@@ -122,22 +118,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'derekwyatt/vim-scala'
 
 Bundle 'othree/html5-syntax.vim'
-
-Bundle 'justinmk/vim-sneak'
-  "replace 'f' with inclusive 1-char Sneak
-    nmap f <Plug>Sneak_f
-    nmap F <Plug>Sneak_F
-    xmap f <Plug>Sneak_f
-    xmap F <Plug>Sneak_F
-    omap f <Plug>Sneak_f
-    omap F <Plug>Sneak_F
-    "replace 't' with exclusive 1-char Sneak
-    nmap t <Plug>Sneak_t
-    nmap T <Plug>Sneak_T
-    xmap t <Plug>Sneak_t
-    xmap T <Plug>Sneak_T
-    omap t <Plug>Sneak_t
-    omap T <Plug>Sneak_T
 
 Bundle 'krisajenkins/vim-pipe'
 
