@@ -25,7 +25,7 @@ Bundle 'scrooloose/nerdtree'
   if has('win32') || has('win64')
     let NERDTreeIgnore=['^NTUSER*', '^ntuser*', '\~$', '\$Recycle.Bin', '^\.$', '^\.\.$']
   endif
-  let NERDTreeDirArrows=1
+  let NERDTreeDirArrows=0
   let NERDTreeWinSize=30
   nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
 
