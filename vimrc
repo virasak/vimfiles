@@ -25,7 +25,7 @@ Bundle 'scrooloose/nerdtree'
   if has('win32') || has('win64')
     let NERDTreeIgnore=['^NTUSER*', '^ntuser*', '\~$', '\$Recycle.Bin', '^\.$', '^\.\.$']
   endif
-  let NERDTreeDirArrows=0
+  let NERDTreeDirArrows=1
   let NERDTreeWinSize=30
   nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
 
@@ -116,11 +116,6 @@ Bundle 'mhinz/vim-signify'
   let g:signify_disable_by_default = 1
 
 Bundle 'cmdalias.vim'
-  au VimEnter *  :Alias th Th
-  au VimEnter *  :Alias en En
-  au VimEnter *  :Alias light Light
-  au VimEnter *  :Alias dark  Dark
-  au VimEnter *  :Alias git Git
 " }}}
 
 " Set default options {{{
@@ -147,6 +142,9 @@ set laststatus=2
 set wildchar=<Tab> wildmenu wildmode=longest,list,full
 set virtualedit=block
 
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+end
 
 " turn off error sound
 set noerrorbells
@@ -167,8 +165,8 @@ set nostartofline
 set backspace=indent,eol,start
 
 " fallback colorscheme
-set background=dark
-color desert
+"set background=dark
+"color desert
 
 set spelllang=en_us
 " }}}
@@ -219,55 +217,48 @@ endif
 function! s:ChangeScheme(scheme)
   if a:scheme == 'light'
     set background=light
-    if has('gui_running')
-      silent! color osx_like
-      "silent! color habiLight
-      "silent! color rainbow_fruit
-    endif
+    silent! color solarized
+    silent! AirlineTheme solarized
   elseif a:scheme == 'dark'
     set background=dark
-    if has('gui_running')
-      silent! color mdark
-      "silent! color fu
-      "silent! color candyman
-      "silent! color monokai
-      "silent! color cobalt
-      "silent! color solarized
-    else
-      silent! color blackbeauty
-    end
+    silent! color solarized
+    silent! AirlineTheme solarized
   end
 endfunction
-command! Dark call s:ChangeScheme('dark')
+
+command! Dark  call s:ChangeScheme('dark')
 command! Light call s:ChangeScheme('light')
+autocmd VimEnter *  Alias light Light
+autocmd VimEnter *  Alias dark  Dark
 " set default scheme
-Dark
+autocmd VimEnter * Dark
+
 " }}}
 
 " Change working language by profile {{{
 function! s:ChangeLang(lang)
     if a:lang == 'en'
       if has('win32') || has('win64')
-          "set guifont=Envy_Code_R:h11
-          set guifont=Consolas_for_Powerline_FixedD:h11
-          "set guifont=Consolas:h11
+          set guifont=Fira_Mono:h10
       else
-          set guifont=Liberation\ Mono\ 9
+          set guifont=Fira\ Mono\ 10
       endif
     elseif a:lang == 'th'
       if has('win32') || has('win64')
           set guifont=Tlwg_Typo:h11
       else
-          set guifont=Tlwg_Typo:h11
+          set guifont=Tlwg\ Typo\ 11
       endif
     end
 endfunction
 
 command! En call s:ChangeLang('en')
 command! Th call s:ChangeLang('th')
+autocmd VimEnter *  Alias th Th
+autocmd VimEnter *  Alias en En
 
 " set default lang
-En
+autocmd VimEnter * En
 " }}}
 
 " change font size/linespace {{{
