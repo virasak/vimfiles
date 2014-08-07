@@ -116,6 +116,8 @@ Bundle 'mhinz/vim-signify'
   let g:signify_disable_by_default = 1
 
 Bundle 'cmdalias.vim'
+
+Bundle 'BufOnly.vim'
 " }}}
 
 " Set default options {{{
@@ -215,14 +217,15 @@ endif
 
 " change colorscheme by profile {{{
 function! s:ChangeScheme(scheme)
-  if a:scheme == 'light'
-    set background=light
-    silent! color solarized
-    silent! AirlineTheme solarized
-  elseif a:scheme == 'dark'
-    set background=dark
-    silent! color solarized
-    silent! AirlineTheme solarized
+  exec "set background=".a:scheme
+  if has('gui_running')
+    if a:scheme == 'light'
+      silent! color solarized
+      silent! AirlineTheme solarized
+    elseif a:scheme == 'dark'
+      silent! color solarized
+      silent! AirlineTheme solarized
+    end
   end
 endfunction
 
