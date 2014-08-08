@@ -43,8 +43,6 @@ Bundle 'tpope/vim-repeat'
 
 Bundle 'tpope/vim-unimpaired'
 
-Bundle 'flazz/vim-colorschemes'
-
 Bundle 'xolox/vim-colorscheme-switcher'
 
 Bundle 'matchit.zip'
