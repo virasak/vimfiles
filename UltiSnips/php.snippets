@@ -1,0 +1,38 @@
+snippet cictrl
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+class $1 extends ${2:CI}_Controller {
+
+	public function __construct() {
+	}
+
+}
+endsnippet
+
+snippet h2
+<h2>${1:${VISUAL: Header 2}}</h2>
+endsnippet
+
+snippet iife
+(function ($2) {
+	${3:${VISUAL}}
+})($1);
+endsnippet
+
+snippet class
+class ${1} {
+	${0}
+}
+endsnippet
+
+snippet ctor
+public function __construct(${1}) {
+	${0}
+}
+endsnippet
+
+snippet func
+${1:public } function ${2}(${3}) {
+	${0}
+}
+endsnippet

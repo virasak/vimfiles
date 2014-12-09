@@ -4,119 +4,145 @@ let mapleader=" "
 set nocompatible
 filetype off
 if has('win32') || has('win64')
-  set rtp+=~/vimfiles/bundle/vundle
-  call vundle#rc('~/vimfiles/bundle')
+  set rtp+=~/vimfiles/bundle/Vundle.vim
+  call vundle#begin('~/vimfiles/bundle')
 else
-  set rtp+=~/.vim/bundle/vundle
-  call vundle#rc()
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
 endif
 " }}}
 
 " Load bundles {{{
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'joonty/vdebug'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
 
-Bundle 'scrooloose/syntastic'
-
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
+  let NERDTreeIgnore = ['^\.', '\~$']
   if has('win32') || has('win64')
-    let NERDTreeIgnore=['^NTUSER*', '^ntuser*', '\~$', '\$Recycle.Bin', '^\.$', '^\.\.$']
+    let NERDTreeIgnore += ['^NTUSER*', '^ntuser*', '\$Recycle.Bin']
+  else
+    let NERDTreeIgnore += ['^Applications$']
   endif
   let NERDTreeDirArrows=1
   let NERDTreeWinSize=30
   nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
+  nnoremap <silent> <leader>. :NERDTreeFind<CR>
+  autocmd VimEnter *  Alias nt :NERDTree
 
-Bundle 'scrooloose/nerdcommenter'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'kien/ctrlp.vim'
   let g:ctrlp_cmd = 'CtrlPLastMode'
+  let g:ctrlp_custom_ignore = 'target\|node_modues\|.git'
+  let g:ctrlp_prompt_mappings = {
+    \ 'ToggleType(1)':        ['<c-f>', '<c-up>', '<c-l>'],
+    \ 'ToggleType(-1)':       ['<c-b>', '<c-down>', 'c-h>'],
+    \ }
   nnoremap <silent> >f :CtrlP<CR>
   nnoremap <silent> >b :CtrlPBuffer<CR>
   nnoremap <silent> >d :CtrlPDir<CR>
 
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
-Bundle 'xolox/vim-colorscheme-switcher'
+Plugin 'matchit.zip'
 
-Bundle 'matchit.zip'
+Plugin 'xolox/vim-misc'
 
-Bundle 'mileszs/ack.vim'
-  if has('win32') || has('win64')
-    let g:ackprg='ack.cmd  -H --nocolor --nogroup --column'
-  endif
-
-Bundle 'xolox/vim-misc'
-
-Bundle 'xolox/vim-session'
+Plugin 'xolox/vim-session'
   let g:session_autoload='no'
   let g:session_autosave='yes'
 
-Bundle 'xolox/vim-notes'
-  let g:notes_directories=['~/Documents/Notes']
-  let g:notes_suffix='.txt'
+Plugin 'bronson/vim-visual-star-search'
 
-Bundle 'honza/vim-snippets'
-  let g:snips_author='Virasak Dungsrikaew'
+Plugin 'terryma/vim-multiple-cursors'
+  "let g:multi_cursor_exit_from_visual_mode = 0
+  "let g:multi_cursor_exit_from_insert_mode = 0
 
-Bundle 'MarcWeber/vim-addon-mw-utils'
-
-Bundle 'tomtom/tlib_vim'
-
-Bundle 'garbas/vim-snipmate'
-  snoremap <silent> <BS> <Space><BS>
-
-Bundle 'bronson/vim-visual-star-search'
-
-Bundle 'terryma/vim-multiple-cursors'
-  let g:multi_cursor_exit_from_visual_mode = 0
-  let g:multi_cursor_exit_from_insert_mode = 0
-
-Bundle 'junegunn/vim-easy-align'
+Plugin 'junegunn/vim-easy-align'
   vnoremap <silent> <Enter> :EasyAlign<CR>
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
   set noshowmode
+  let g:airline_exclude_preview = 1
   " tabline
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#fnamemod = ':t'
 
-Bundle 'jelera/vim-javascript-syntax'
+Plugin 'jelera/vim-javascript-syntax'
 
-Bundle 'hail2u/vim-css3-syntax'
+Plugin 'hail2u/vim-css3-syntax'
 
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
-Bundle 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
 
-Bundle 'othree/html5-syntax.vim'
+Plugin 'othree/html5-syntax.vim'
 
-Bundle 'krisajenkins/vim-pipe'
-
-Bundle 'ervandew/supertab'
-
-Bundle 'LargeFile'
+Plugin 'LargeFile'
   let g:LargeFile=1
 
-Bundle 'bufkill.vim'
+Plugin 'cmdalias.vim'
 
-Bundle 'tpope/vim-haml'
+Plugin 'bufkill.vim'
+  autocmd VimEnter *  Alias bun BUN
+  autocmd VimEnter *  Alias bd BD
+  autocmd VimEnter *  Alias bw BW
 
-Bundle 'mhinz/vim-signify'
+Plugin 'BufOnly.vim'
+  autocmd VimEnter *  Alias bonly BufOnly
+
+Plugin 'tpope/vim-haml'
+
+Plugin 'mhinz/vim-signify'
   let g:signify_disable_by_default = 1
 
-Bundle 'cmdalias.vim'
+Plugin 'lambdatoast/elm.vim'
 
-Bundle 'BufOnly.vim'
+Plugin 'SirVer/ultisnips'
+
+Plugin 'guns/vim-sexp'
+
+Plugin 'mileszs/ack.vim'
+  if has('win32') || has('win64')
+    let g:ackprg='ack.cmd  -H --nocolor --nogroup --column'
+  endif
+
+Plugin 'xolox/vim-notes'
+  let g:notes_directories=['~/Documents/Notes']
+  let g:notes_suffix='.txt'
+
+Plugin 'tommcdo/vim-exchange'
+
+Plugin 'Townk/vim-autoclose'
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+Plugin 'airblade/vim-gitgutter'
+
+"Plugin 'Valloric/YouCompleteMe'
+"   let g:UltiSnipsExpandTrigger="<C-j>"
+"   let g:UltiSnipsJumpForwardTrigger="<C-j>"
+"   let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+"Plugin 'krisajenkins/vim-pipe'
+"Plugin 'xolox/vim-colorscheme-switcher'
+"Plugin 'joonty/vdebug'
+
+
+
+
 " }}}
+call vundle#end()
 
 " Set default options {{{
 filetype plugin indent on
@@ -171,16 +197,25 @@ set backspace=indent,eol,start
 set spelllang=en_us
 " }}}
 
+" insert mode key mapping {{{
+inoremap <S-CR> <CR><UP>
+" }}}
+
 " visual mode key mapping {{{
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 " }}}
 
 " normal mode key mapping {{{
-nnoremap <silent> <Space> <Nop>
-nnoremap <silent> <NL> i<CR><Esc>
-nnoremap <silent> <Tab>   <C-w>w
-nnoremap <silent> <S-Tab> <C-w>W
+nnoremap <silent> <Space>    <Nop>
+nnoremap <silent> <NL>       i<CR><Esc>
+nnoremap <silent> <Tab>      <NOP>
+nnoremap <silent> <Tab><Tab> <C-w>w
+nnoremap <silent> <Tab>h     <C-w>h
+nnoremap <silent> <Tab>j     <C-w>j
+nnoremap <silent> <Tab>k     <C-w>k
+nnoremap <silent> <Tab>l     <C-w>l
+nnoremap <silent> <Tab>o     <C-w>o
 
 nnoremap <silent> Y y$
 
@@ -200,8 +235,10 @@ function s:PrevTabLine()
   endif
 endfunction
 
-nnoremap <silent> H :call <SID>PrevTabLine()<CR>
-nnoremap <silent> L :call <SID>NextTabLine()<CR>
+nnoremap <silent> <C-h> :call <SID>PrevTabLine()<CR>
+nnoremap <silent> <C-l> :call <SID>NextTabLine()<CR>
+
+nnoremap <silent> >e :Explore<CR>
 
 " }}}
 
@@ -218,12 +255,14 @@ function! s:ChangeScheme(scheme)
   exec "set background=".a:scheme
   if has('gui_running')
     if a:scheme == 'light'
-      silent! color solarized
-      silent! AirlineTheme solarized
+      silent! color github
+      silent! AirlineTheme light
     elseif a:scheme == 'dark'
-      silent! color solarized
-      silent! AirlineTheme solarized
+      silent! color candy
+      silent! AirlineTheme wombat
     end
+  else
+      silent! AirlineTheme wombat
   end
 endfunction
 
@@ -287,5 +326,25 @@ let g:netrw_liststyle=3
 command! FixTrailingSpaces %s/\s\+$
 command! DiffSaved call diff#WithSaved()
 " }}}
+"
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.gsp set filetype=html.gsp
+
+" via: http://vim.wikia.com/wiki/HTML_entities
+function! HtmlEscape()
+  silent '<,'>s/&/\&amp;/eg
+  silent '<,'>s/</\&lt;/eg
+  silent '<,'>s/>/\&gt;/eg
+endfunction
+
+function! HtmlUnEscape()
+  silent '<,'>s/&lt;/</eg
+  silent '<,'>s/&gt;/>/eg
+  silent '<,'>s/&amp;/\&/eg
+endfunction
+
+vnoremap <silent> <Leader>he :call HtmlEscape()<CR>
+vnoremap <silent> <Leader>hu :call HtmlUnEscape()<CR>
 
 " vim:ts=2:sw=2:foldmethod=marker
