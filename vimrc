@@ -133,10 +133,8 @@ Plugin 'chriskempson/base16-vim'
   let base16colorspace=256
 
 
-
-
-" }}}
 call vundle#end()
+" }}}
 
 " Set default options {{{
 filetype plugin indent on
