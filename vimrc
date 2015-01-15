@@ -137,6 +137,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
   let base16colorspace=256
 
+Plugin 'gregsexton/gitv'
 
 call vundle#end()
 " }}}
