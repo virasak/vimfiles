@@ -199,24 +199,8 @@ nnoremap <silent> <Tab>o     <C-w>o
 
 nnoremap <silent> Y y$
 
-function s:NextTabLine()
-  if tabpagenr('$') == 1
-    bnext
-  else
-    tabnext
-  endif
-endfunction
-
-function s:PrevTabLine()
-  if tabpagenr('$') == 1
-    bprev
-  else
-    tabprev
-  endif
-endfunction
-
-nnoremap <silent> <C-h> :call <SID>PrevTabLine()<CR>
-nnoremap <silent> <C-l> :call <SID>NextTabLine()<CR>
+nnoremap <expr> <C-h> tabpagenr('$') == 1 ? ":bprev\<CR>" : ":tabprev\<CR>"
+nnoremap <expr> <C-l> tabpagenr('$') == 1 ? ":bnext\<CR>" : ":tabnext\<CR>"
 
 nnoremap <silent> >e :Explore<CR>
 
