@@ -116,6 +116,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 
 
+Plugin 'chriskempson/base16-vim'
+  let base16colorspace=256
 
 
 
@@ -169,9 +171,8 @@ set nostartofline
 
 set backspace=indent,eol,start
 
-" fallback colorscheme
-"set background=dark
-"color desert
+set background=dark
+color base16-chalk
 
 set spelllang=en_us
 " }}}
