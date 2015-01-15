@@ -22,7 +22,6 @@ Plugin 'scrooloose/nerdtree'
   let NERDTreeWinSize=30
   nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
   nnoremap <silent> <leader>. :NERDTreeFind<CR>
-  autocmd VimEnter *  Alias nt :NERDTree
 
 
 Plugin 'scrooloose/nerdcommenter'
