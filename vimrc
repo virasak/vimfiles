@@ -179,6 +179,8 @@ set spelllang=en_us
 
 " insert mode key mapping {{{
 inoremap <S-CR> <CR><UP>
+
+inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 " }}}
 
 " visual mode key mapping {{{
