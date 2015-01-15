@@ -3,16 +3,12 @@ let mapleader=" "
 " Setup Vundle ---------------- {{{
 set nocompatible
 filetype off
-if has('win32') || has('win64')
-  set rtp+=~/vimfiles/bundle/Vundle.vim
-  call vundle#begin('~/vimfiles/bundle')
-else
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-endif
+set rtp+=~/.vim/bundle/Vundle.vim
 " }}}
 
 " Load bundles {{{
+call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
@@ -20,12 +16,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 
 Plugin 'scrooloose/nerdtree'
-  let NERDTreeIgnore = ['^\.', '\~$']
-  if has('win32') || has('win64')
-    let NERDTreeIgnore += ['^NTUSER*', '^ntuser*', '\$Recycle.Bin']
-  else
-    let NERDTreeIgnore += ['^Applications$']
-  endif
+  let NERDTreeIgnore = ['^\.', '\~$', '^Applications$', '\.pyc$']
+  let NERDTreeIgnore += []
   let NERDTreeDirArrows=1
   let NERDTreeWinSize=30
   nnoremap <silent> <leader><Space> :NERDTreeToggle<CR>
@@ -113,9 +105,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'guns/vim-sexp'
 
 Plugin 'mileszs/ack.vim'
-  if has('win32') || has('win64')
-    let g:ackprg='ack.cmd  -H --nocolor --nogroup --column'
-  endif
 
 Plugin 'xolox/vim-notes'
   let g:notes_directories=['~/Documents/Notes']
@@ -245,60 +234,7 @@ nnoremap <silent> >e :Explore<CR>
 " command mode key mapping {{{
 cnoremap <S-CR> <Home>\<<End>\><CR>
 
-if has('unix')
-  cnoremap w!! %!sudo tee > /dev/null %
-endif
-" }}}
-
-" change colorscheme by profile {{{
-function! s:ChangeScheme(scheme)
-  exec "set background=".a:scheme
-  if has('gui_running')
-    if a:scheme == 'light'
-      silent! color github
-      silent! AirlineTheme light
-    elseif a:scheme == 'dark'
-      silent! color candy
-      silent! AirlineTheme wombat
-    end
-  else
-      silent! AirlineTheme wombat
-  end
-endfunction
-
-command! Dark  call s:ChangeScheme('dark')
-command! Light call s:ChangeScheme('light')
-autocmd VimEnter *  Alias light Light
-autocmd VimEnter *  Alias dark  Dark
-" set default scheme
-autocmd VimEnter * Dark
-
-" }}}
-
-" Change working language by profile {{{
-function! s:ChangeLang(lang)
-    if a:lang == 'en'
-      if has('win32') || has('win64')
-          set guifont=Fira_Mono:h10
-      else
-          set guifont=Fira\ Mono\ 10
-      endif
-    elseif a:lang == 'th'
-      if has('win32') || has('win64')
-          set guifont=Tlwg_Typo:h11
-      else
-          set guifont=Tlwg\ Typo\ 11
-      endif
-    end
-endfunction
-
-command! En call s:ChangeLang('en')
-command! Th call s:ChangeLang('th')
-autocmd VimEnter *  Alias th Th
-autocmd VimEnter *  Alias en En
-
-" set default lang
-autocmd VimEnter * En
+cnoremap w!! %!sudo tee > /dev/null %
 " }}}
 
 " change font size/linespace {{{
