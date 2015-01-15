@@ -249,6 +249,10 @@ let g:netrw_liststyle=3
 
 " }}}
 
+" disable html style {{{
+let g:html_no_rendering=1
+" }}}
+
 " misc. command {{{
 command! FixTrailingSpaces %s/\s\+$
 command! DiffSaved call diff#WithSaved()
