@@ -116,9 +116,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 
 
-"Plugin 'krisajenkins/vim-pipe'
-"Plugin 'xolox/vim-colorscheme-switcher'
-"Plugin 'joonty/vdebug'
 
 
 
