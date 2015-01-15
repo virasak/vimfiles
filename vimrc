@@ -12,6 +12,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
+  autocmd VimEnter *  Alias git Git
+
 
 Plugin 'scrooloose/syntastic'
 
