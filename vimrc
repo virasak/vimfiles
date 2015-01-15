@@ -137,6 +137,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
   let base16colorspace=256
 
+Plugin 'othree/html5.vim'
+
 Plugin 'gregsexton/gitv'
 
 call vundle#end()
