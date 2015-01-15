@@ -124,12 +124,12 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'airblade/vim-gitgutter'
-  autocmd VimEnter *  Alias GG   GitGutter
-  autocmd VimEnter *  Alias GGRH GitGutterRevertHunk
-  autocmd VimEnter *  Alias GGSH GitGutterStageHunk
-  autocmd VimEnter *  Alias GGN  GitGutterNextHunk
-  autocmd VimEnter *  Alias GGP  GitGutterPrevHunk
-  autocmd VimEnter *  Alias GGV  GitGutterPreviewHunk
+  autocmd VimEnter *  Alias gg   GitGutter
+  autocmd VimEnter *  Alias ggrh GitGutterRevertHunk
+  autocmd VimEnter *  Alias ggsh GitGutterStageHunk
+  autocmd VimEnter *  Alias ggn  GitGutterNextHunk
+  autocmd VimEnter *  Alias ggp  GitGutterPrevHunk
+  autocmd VimEnter *  Alias ggv  GitGutterPreviewHunk
 
 
 Plugin 'chriskempson/base16-vim'
