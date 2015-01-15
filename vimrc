@@ -54,8 +54,6 @@ Plugin 'xolox/vim-session'
 Plugin 'bronson/vim-visual-star-search'
 
 Plugin 'terryma/vim-multiple-cursors'
-  "let g:multi_cursor_exit_from_visual_mode = 0
-  "let g:multi_cursor_exit_from_insert_mode = 0
 
 Plugin 'junegunn/vim-easy-align'
   vnoremap <silent> <Enter> :EasyAlign<CR>
