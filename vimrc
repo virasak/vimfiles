@@ -127,12 +127,14 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'airblade/vim-gitgutter'
   autocmd VimEnter *  Alias gg   GitGutter
+  autocmd VimEnter *  Alias ggt  GitGutterToggle
   autocmd VimEnter *  Alias ggrh GitGutterRevertHunk
   autocmd VimEnter *  Alias ggsh GitGutterStageHunk
   autocmd VimEnter *  Alias ggn  GitGutterNextHunk
   autocmd VimEnter *  Alias ggp  GitGutterPrevHunk
   autocmd VimEnter *  Alias ggv  GitGutterPreviewHunk
-
+  nnoremap <silent> ]h :GitGutterNextHunk<CR>
+  nnoremap <silent> [h :GitGutterPrevHunk<CR>
 
 Plugin 'chriskempson/base16-vim'
   let base16colorspace=256
