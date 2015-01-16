@@ -143,6 +143,9 @@ Plugin 'othree/html5.vim'
 
 Plugin 'gregsexton/gitv'
 
+Plugin 'elzr/vim-json'
+  let g:vim_json_syntax_conceal = 0
+
 call vundle#end()
 " }}}
 
