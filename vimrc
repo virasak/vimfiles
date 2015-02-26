@@ -83,6 +83,8 @@ Plugin 'jelera/vim-javascript-syntax'
 
 Plugin 'hail2u/vim-css3-syntax'
 
+Plugin 'groenewege/vim-less'
+
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'derekwyatt/vim-scala'
@@ -138,8 +140,6 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'chriskempson/base16-vim'
   let base16colorspace=256
-
-Plugin 'othree/html5.vim'
 
 Plugin 'gregsexton/gitv'
 
