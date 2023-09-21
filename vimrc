@@ -2,8 +2,9 @@ let mapleader=" "
 
 " Setup Vundle ---------------- {{{
 set nocompatible
+let s:vundle_path = expand('<sfile>:p:h') . "/bundle/Vundle.vim"
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+let &rtp .= ',' . s:vundle_path
 " }}}
 
 " Load bundles {{{
