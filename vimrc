@@ -12,12 +12,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-  autocmd VimEnter *  Alias git Git
-
-
-Plugin 'scrooloose/syntastic'
-
 Plugin 'scrooloose/nerdtree'
   let NERDTreeIgnore = ['^\.', '\~$', '^Applications$', '\.pyc$']
   let NERDTreeIgnore += []
@@ -48,16 +42,6 @@ Plugin 'tpope/vim-unimpaired'
 
 Plugin 'matchit.zip'
 
-Plugin 'xolox/vim-misc'
-
-Plugin 'xolox/vim-session'
-  let g:session_autoload='no'
-  let g:session_autosave='yes'
-
-Plugin 'bronson/vim-visual-star-search'
-
-Plugin 'terryma/vim-multiple-cursors'
-
 Plugin 'junegunn/vim-easy-align'
   vnoremap <silent> <Enter> :EasyAlign<CR>
 
@@ -78,74 +62,6 @@ Plugin 'bling/vim-airline'
   let g:airline_symbols.branch = '⭠'
   let g:airline_symbols.readonly = '⭤'
   let g:airline_symbols.linenr = '⭡'
-
-
-Plugin 'jelera/vim-javascript-syntax'
-
-Plugin 'hail2u/vim-css3-syntax'
-
-Plugin 'groenewege/vim-less'
-
-Plugin 'kchmck/vim-coffee-script'
-
-Plugin 'derekwyatt/vim-scala'
-
-Plugin 'othree/html5-syntax.vim'
-
-Plugin 'LargeFile'
-  let g:LargeFile=1
-
-Plugin 'cmdalias.vim'
-
-Plugin 'bufkill.vim'
-  autocmd VimEnter *  Alias bun BUN
-  autocmd VimEnter *  Alias bd BD
-  autocmd VimEnter *  Alias bw BW
-
-Plugin 'BufOnly.vim'
-  autocmd VimEnter *  Alias bonly BufOnly
-
-Plugin 'tpope/vim-haml'
-
-Plugin 'mhinz/vim-signify'
-  let g:signify_disable_by_default = 1
-
-Plugin 'lambdatoast/elm.vim'
-
-Plugin 'SirVer/ultisnips'
-
-Plugin 'guns/vim-sexp'
-
-Plugin 'mileszs/ack.vim'
-
-Plugin 'xolox/vim-notes'
-  let g:notes_directories=['~/Documents/Notes']
-  let g:notes_suffix='.txt'
-
-Plugin 'tommcdo/vim-exchange'
-
-Plugin 'Townk/vim-autoclose'
-
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-Plugin 'airblade/vim-gitgutter'
-  autocmd VimEnter *  Alias gg   GitGutter
-  autocmd VimEnter *  Alias ggt  GitGutterToggle
-  autocmd VimEnter *  Alias ggrh GitGutterRevertHunk
-  autocmd VimEnter *  Alias ggsh GitGutterStageHunk
-  autocmd VimEnter *  Alias ggn  GitGutterNextHunk
-  autocmd VimEnter *  Alias ggp  GitGutterPrevHunk
-  autocmd VimEnter *  Alias ggv  GitGutterPreviewHunk
-  nnoremap <silent> ]h :GitGutterNextHunk<CR>
-  nnoremap <silent> [h :GitGutterPrevHunk<CR>
-
-Plugin 'chriskempson/base16-vim'
-  let base16colorspace=256
-
-Plugin 'gregsexton/gitv'
-
-Plugin 'elzr/vim-json'
-  let g:vim_json_syntax_conceal = 0
 
 call vundle#end()
 " }}}
@@ -173,10 +89,7 @@ set list listchars=tab:»·,trail:·,precedes:«,extends:»,nbsp:.
 set laststatus=2
 set wildchar=<Tab> wildmenu wildmode=longest,list,full
 set virtualedit=block
-
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-end
+set t_Co=256
 
 " turn off error sound
 set noerrorbells
@@ -197,7 +110,6 @@ set nostartofline
 set backspace=indent,eol,start
 
 set background=dark
-color base16-chalk
 
 set spelllang=en_us
 " }}}
@@ -260,18 +172,11 @@ let g:netrw_liststyle=3
 
 " }}}
 
-" disable html style {{{
-let g:html_no_rendering=1
-" }}}
-
 " misc. command {{{
 command! FixTrailingSpaces %s/\s\+$
 command! DiffSaved call diff#WithSaved()
 " }}}
 "
-
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.gsp set filetype=html.gsp
 
 " via: http://vim.wikia.com/wiki/HTML_entities
 function! HtmlEscape()
