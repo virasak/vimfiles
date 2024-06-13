@@ -51,17 +51,12 @@ Plugin 'bling/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_exclude_preview = 1
 
-  let g:airline_left_sep = '⮀'
-  let g:airline_left_alt_sep = '⮁'
-  let g:airline_right_sep = '⮂'
-  let g:airline_right_alt_sep = '⮃'
-
   if !exists('g:airline_symbols')
     let g:airline_symbols = {}
   endif
-  let g:airline_symbols.branch = '⭠'
-  let g:airline_symbols.readonly = '⭤'
-  let g:airline_symbols.linenr = '⭡'
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
 
 call vundle#end()
 " }}}
@@ -115,9 +110,8 @@ set spelllang=en_us
 " }}}
 
 " insert mode key mapping {{{
-inoremap <S-CR> <CR><UP>
-
-inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
+" inoremap <S-CR> <CR><UP>
+" inoremap <expr> <CR>  pumvisible() ? "\<C-y>" : "\<CR>"
 " }}}
 
 " visual mode key mapping {{{
@@ -154,6 +148,8 @@ cnoremap w!! %!sudo tee > /dev/null %
 " change font size/linespace {{{
 if has('gui_running')
   set guioptions=i
+  set guifont=JetBrains_Mono_NL:h10
+  colorscheme codeschool
 
   " +/- font size
   nnoremap <silent> <C-Up>   :silent! let &gfn = substitute(&gfn,'\d\+','\=eval(submatch(0)+1)', '')<CR>
@@ -173,7 +169,7 @@ let g:netrw_liststyle=3
 " }}}
 
 " misc. command {{{
-command! FixTrailingSpaces %s/\s\+$
+command! FixTrailingSpaces %s/\s\+$//
 command! DiffSaved call diff#WithSaved()
 " }}}
 "
