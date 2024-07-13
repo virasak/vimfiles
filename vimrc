@@ -2,13 +2,14 @@ let mapleader=" "
 
 " Setup Vundle ---------------- {{{
 set nocompatible
-let s:vundle_path = expand('<sfile>:p:h') . "/bundle/Vundle.vim"
+let s:bundle_path = expand('<sfile>:p:h') . "/bundle"
+let s:vundle_path = s:bundle_path . "/Vundle.vim"
 filetype off
 let &rtp .= ',' . s:vundle_path
 " }}}
 
 " Load bundles {{{
-call vundle#begin()
+call vundle#begin(s:bundle_path)
 
 Plugin 'gmarik/Vundle.vim'
 
