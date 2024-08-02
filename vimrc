@@ -46,18 +46,12 @@ Plugin 'matchit.zip'
 Plugin 'junegunn/vim-easy-align'
   vnoremap <silent> <Enter> :EasyAlign<CR>
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
   set noshowmode
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_exclude_preview = 1
 
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
 
 call vundle#end()
 " }}}
