@@ -52,6 +52,7 @@ Plugin 'vim-airline/vim-airline'
   let g:airline#extensions#tabline#enabled = 1
   let g:airline_exclude_preview = 1
 
+Plugin 'Donaldttt/fuzzyy'
 
 call vundle#end()
 " }}}
