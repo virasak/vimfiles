@@ -11,7 +11,7 @@ let &rtp .= ',' . s:vundle_path
 " Load bundles {{{
 call vundle#begin(s:bundle_path)
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
   let NERDTreeIgnore = ['^\.', '\~$', '^Applications$', '\.pyc$']
