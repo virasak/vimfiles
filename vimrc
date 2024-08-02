@@ -141,23 +141,6 @@ cnoremap <S-CR> <Home>\<<End>\><CR>
 cnoremap w!! %!sudo tee > /dev/null %
 " }}}
 
-" change font size/linespace {{{
-if has('gui_running')
-  set guioptions=i
-  set guifont=JetBrains_Mono_NL:h10
-  colorscheme codeschool
-
-  " +/- font size
-  nnoremap <silent> <C-Up>   :silent! let &gfn = substitute(&gfn,'\d\+','\=eval(submatch(0)+1)', '')<CR>
-  nnoremap <silent> <C-Down> :silent! let &gfn = substitute(&gfn,'\d\+','\=eval(submatch(0)-1)', '')<CR>
-
-  " +/- line space
-  nnoremap <silent> <C-Right> :set linespace+=1<CR>
-  nnoremap <silent> <C-Left>  :set linespace-=1<CR>
-
-endif
-" }}}
-
 " netrw plugin setting {{{
 let g:netrw_banner=0
 let g:netrw_liststyle=3
