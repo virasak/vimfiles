@@ -24,7 +24,7 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_cmd = 'CtrlPLastMode'
   let g:ctrlp_custom_ignore = 'target\|node_modues\|.git'
   let g:ctrlp_prompt_mappings = {
